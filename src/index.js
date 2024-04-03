@@ -6,6 +6,10 @@ const app = express();
 
 const apiRouter = require("./routes");
 
+app.use(express.json());
+
+app.use(express.urlencoded({ extended: true }));
+
 app.use('/api',apiRouter);
 
 app.listen(serverconfig.PORT, () => {
